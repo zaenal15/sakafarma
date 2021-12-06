@@ -5,19 +5,31 @@
   --clr-wht-magnolia: #F5F5FF;
   --clr-wht-light-grey: #D1D1D1;
   --clr-blk-davys-grey: #4F4F4F;
+  --clr-grn-generic-viridian: #068374;
+  --clr-grn-green-sheen: #76BBB3;
+  --clr-wht-gainsboro: #DADCE0;
 }
 
 body {
   margin: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
-body p, body h1, body h2, body h3, body h4, body textarea, body a {
-  color: #4f4f4f;
+body p,
+body h1,
+body h2,
+body h3,
+body h4,
+body textarea,
+body a {
+  color: var(--clr-blk-davys-grey);
   margin: 0;
   padding: 0;
 }
 
-body p, body span, body button {
+body p,
+body span,
+body button {
   font-size: medium;
 }
 
@@ -34,7 +46,6 @@ body a {
 body button {
   cursor: pointer;
   border: unset;
-  font-family: 'Poppins', sans-serif;
   border-radius: 10px;
 }
 
@@ -44,7 +55,6 @@ body textarea {
   outline: none;
   border: 0px;
   background: transparent;
-  font-family: 'Poppins', sans-serif;
   font-size: medium;
 }
 
@@ -98,7 +108,8 @@ body .src-bar input {
   width: 10%;
 }
 
-#main-content #choose-module #btn-oee:hover + .bg-1, #main-content #choose-module #btn-pm:hover + .bg-2 {
+#main-content #choose-module #btn-oee:hover + .bg-1,
+#main-content #choose-module #btn-pm:hover + .bg-2 {
   opacity: 1.0;
 }
 
@@ -200,7 +211,7 @@ body .src-bar input {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: header-pm;
-  border-bottom: 1px solid #dadce0;
+  border-bottom: 1px solid var(--clr-wht-gainsboro);
 }
 
 #main-content #content-module-pm #header-pm .row-head-pm {
@@ -240,13 +251,13 @@ body .src-bar input {
 }
 
 #main-content #content-module-pm #content-pm .card {
-  background: var(--clr-wht-magnolia);
-  height: 250px;
-  border-radius: 20px;
+  background: var(--clr-wht-basic);
+  border-radius: 15px;
+  border: 1px solid var(--clr-wht-light-grey);
 }
 
 #main-content #content-module-pm #content-pm .row-filter-item-pm {
-  border-bottom: 1px solid #dadce0;
+  border-bottom: 1px solid var(--clr-wht-gainsboro);
 }
 
 #main-content #content-module-pm #content-pm .row-filter-item-pm .filter-item-pm {
@@ -308,9 +319,60 @@ body .src-bar input {
 }
 
 #main-content #content-module-pm #content-pm .unit-pm #more-btn-pm {
+  cursor: pointer;
+  font-size: medium !important;
+  color: var(--clr-blk-davys-grey);
+  padding: 10px !important;
+  text-decoration: none !important;
+  letter-spacing: 0 !important;
+  background: transparent;
+  border: 2px solid var(--clr-grn-green-sheen) !important;
+  border: none;
+  width: 150px;
   margin: auto;
-  padding: 10px;
-  width: 100px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#main-content #content-module-pm #content-pm .unit-pm #more-btn-pm:hover {
+  background-color: var(--clr-grn-generic-viridian);
+  color: var(--clr-wht-basic);
+  border: none;
+  transform: scale(1.04);
+  -webkit-transform: scale(1.04);
+  -moz-transform: scale(1.04);
+  -o-transform: scale(1.04);
+  -ms-transform: scale(1.04);
+}
+
+#main-content #content-module-pm #content-pm .unit-pm .list-unit-pm .content-unit-pm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+}
+
+#main-content #content-module-pm #content-pm .unit-pm .list-unit-pm .content-unit-pm .content-asset-header img {
+  width: 100%;
+}
+
+#main-content #content-module-pm #content-pm .unit-pm .list-unit-pm .content-unit-pm .content-asset-hover {
+  margin: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+#main-content #content-module-pm #content-pm .unit-pm .list-unit-pm .content-unit-pm .content-asset-hover img {
+  width: 30px;
 }
 
 #main-content .back {
@@ -321,8 +383,8 @@ body .src-bar input {
   border-radius: 0;
   text-decoration: none;
   text-transform: uppercase;
-  background: #76bbb3;
-  border: 2px solid #068374;
+  background: var(--clr-grn-green-sheen);
+  border: 2px solid var(--clr-grn-generic-viridian);
   border-left-width: 0;
   display: inline-block;
   padding: 0.3rem 1rem;
@@ -342,11 +404,11 @@ body .src-bar input {
 
 #main-content .btn-group button:hover {
   color: var(--clr-wht-basic);
-  background: #068374;
+  background: var(--clr-grn-generic-viridian);
 }
 
 #main-content .btn-group .active {
-  background: #068374;
+  background: var(--clr-grn-generic-viridian);
   color: var(--clr-wht-basic);
 }
 /*# sourceMappingURL=myCss.css.map */
