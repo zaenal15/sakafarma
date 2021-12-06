@@ -313,6 +313,10 @@ body {
             display: flex;
             flex-direction: column;
             overflow: hidden;
+            &:hover{
+              transform: scale(1.05);
+              opacity: 1;
+            }
 
             .content-asset-header {
               img {

@@ -356,6 +356,12 @@ body .src-bar input {
   overflow: hidden;
 }
 
+#main-content #content-module-pm #content-pm .unit-pm .list-unit-pm .content-unit-pm:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  opacity: 1;
+}
+
 #main-content #content-module-pm #content-pm .unit-pm .list-unit-pm .content-unit-pm .content-asset-header img {
   width: 100%;
 }
