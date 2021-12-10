@@ -1,0 +1,77 @@
+:root {
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  --clr-wht-basic: #FFFFFF;
+  --clr-wht-magnolia: #F5F5FF;
+  --clr-wht-light-grey: #D1D1D1;
+  --clr-blk-davys-grey: #4F4F4F;
+  --clr-grn-generic-viridian: #068374;
+  --clr-grn-green-sheen: #76BBB3;
+  --clr-wht-gainsboro: #DADCE0;
+  --clr-wht-cultured: #F8F8F8;
+}
+
+.table-outer-wrapper {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.table-outer-wrapper .scrolling-lock-table-wrapper {
+  overflow-x: scroll;
+  overflow-y: visible;
+  width: 100%;
+  padding-left: 151px;
+}
+
+.table-outer-wrapper table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.table-outer-wrapper table thead tr th {
+  padding: 10px 20px;
+  text-align: center;
+  white-space: nowrap;
+  background-color: var(--clr-grn-green-sheen);
+}
+
+.table-outer-wrapper table thead tr th a {
+  text-decoration: none;
+  color: var(--clr-wht-basic);
+}
+
+.table-outer-wrapper table thead tr th:nth-of-type(1) {
+  position: absolute;
+  left: 9px;
+  width: 50px;
+}
+
+.table-outer-wrapper table thead tr th:nth-of-type(2) {
+  position: absolute;
+  left: 59px;
+  width: 100px;
+}
+
+.table-outer-wrapper table tbody tr td {
+  padding: 10px;
+  text-align: center;
+  white-space: nowrap;
+  background-color: var(--clr-wht-light-grey);
+}
+
+.table-outer-wrapper table tbody tr td:nth-of-type(1) {
+  position: absolute;
+  left: 9px;
+  width: 50px;
+  text-align: left;
+}
+
+.table-outer-wrapper table tbody tr td:nth-of-type(2) {
+  position: absolute;
+  left: 59px;
+  width: 100px;
+}
+/*# sourceMappingURL=coba.css.map */
