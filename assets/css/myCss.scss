@@ -13,6 +13,8 @@
   --clr-grn-sheen               : #76BBB3;
   --clr-grn-keppel              : #08AF9C;
   --clr-grn-generic-viridian    : #068374;
+  --clr-grn-deep-jungle         : #0c4b45;
+  --clr-grn-phthalo             : #022723;
   --clr-org-pumpkin             : #FC7222;
   
   // LINEAR GRADIENT --ir
@@ -148,6 +150,7 @@ body {
       margin: auto;
       display: flex;
       gap: 1rem;
+      padding: 20px;
 
       a {
         display: flex;
@@ -362,7 +365,6 @@ body {
         overflow: auto;
         display: flex;
         flex-direction: column;
-        margin: auto;
         
         .row-filter-item-pm {
           border-bottom: 1px solid var(--clr-wht-gainsboro);
@@ -450,12 +452,11 @@ body {
             border: none;
           }
         }
-        
       }
       
       //power meter table
       #pm-table{
-        background: #022723;
+        background: var(--clr-grn-phthalo);
         overflow: auto;
         .pm-table-filter{
           padding: 20px;
@@ -489,9 +490,59 @@ body {
             }
           }
         }
-        
-        .pm-table-content{
-          padding: 20px;
+
+        .row-tb-pm{
+          display: grid;
+          grid-template-columns: auto;
+          margin: 20px;
+          background: var(--clr-grn-deep-jungle);
+
+          .content-header-tb-pm{
+            background: var(--gradient-grn-left);
+            padding: 5px 20px;
+            span{
+              color: var(--clr-wht-basic);
+              font-weight: 600;
+            }
+          }
+
+          .content-body-tb-pm{
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: auto;
+            padding: 20px;
+            #pm-table-content{
+              display: grid;
+              gap: 1rem;
+              grid-template-rows: auto;
+              overflow: hidden;
+            }
+    
+            #chart-tb-pm{
+              .card{
+                border-radius: 10px;
+              }
+              .row-list-chart-pm{
+                display: grid;
+                gap: 1rem;
+                grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+
+                .content-chart-tb{
+                  .header-chart-tb{
+                    padding:10px;
+                    border-bottom: 1px solid var(--clr-wht-gainsboro);
+                    span{
+                      font-weight: 500;
+                    }
+                  }
+
+                  .body-chart-tb{
+                    padding:10px;
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -507,6 +558,11 @@ body {
   background: var(--clr-wht-basic);
   border-radius: 15px;
   border: 1px solid var(--clr-wht-light-grey);
+}
+
+.line {
+  height: 5px;
+  background: var(--clr-grn-phthalo);
 }
 
 .section-content {
@@ -538,11 +594,11 @@ body {
 //table content
 .table-scroll {
   position:relative;
-  max-width:1500px;
+  max-width:1450px;
+  width: 100%;
   margin:auto;
   overflow:hidden;
-  overflow-x: hiden;
-  border:1px solid #000;
+  border:1px solid var(--clr-blk-davys-grey);
 
   table {
     width:100%;
@@ -553,17 +609,17 @@ body {
 
   th,td {
     padding:5px 10px;
-    border:1px solid #000;
-    background:#fff;
+    border:1px solid var(--clr-blk-davys-grey);
+    background: var(--clr-wht-basic);
     white-space:nowrap;
     vertical-align:top;
+    width: 200px !important;
   }
 
   thead, tfoot {
-    background:#f9f9f9;
+    background:var(--clr-wht-cultured);
   }
   .table-wrap {
-  /* 	width:100%; */
     overflow-x:auto;
   }
 }
@@ -574,7 +630,8 @@ body {
 	left:0;
 	pointer-events:none;
   th, td {
-    visibility:hidden
+    visibility:hidden;
+    width: 200px;
   }
 }
 .clone tbody th {
@@ -582,112 +639,126 @@ body {
 	color:red;
 }
 .clone .fixed-side {
-	border:1px solid #000;
-	background:#eee;
+	border:1px solid var(--clr-blk-davys-grey);
+	background:var(--clr-wht-cultured);
 	visibility:visible;
 }
 .clone thead, .clone tfoot{background:transparent;}
 
 
-  //popup unit power meter
-  #row-popup-unit-pm{
-    .section-content{
-      width: 40%;
-    }
-    .popup-bg{
-      position: fixed;
-      z-index: 9999;
-      top: 0;
-      right: 0;
-      left: 0;
-      bottom: 0;
-      background-color: rgba(0, 0, 0, 0.63);
-      display: grid;
-      align-items: center;
-      .row-content-unit-pm{
-        .popup-content-unit-pm{
-          overflow: hidden;
-          border: 0;
-          height: 85vh;
-          display: flex;
-          flex-direction: column;
+//popup unit power meter
+#row-popup-unit-pm{
+  display: none;
 
-          .row-header-popup{
-            background: var(--gradient-grn-left);
-            .content-header-popup{
-              padding: 20px;
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
+  .section-content{
+    width: 40%;
+  }
 
-              h2{
-                color: var(--clr-wht-basic);
-                text-align: center;
-                font-size: large;
-              }
+  .popup-bg{
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.63);
+    display: grid;
+    align-items: center;
+    .row-content-unit-pm{
+      .popup-content-unit-pm{
+        overflow: hidden;
+        border: 0;
+        height: 85vh;
+        display: flex;
+        flex-direction: column;
 
-              .btn-close-popup{
-                width: 25px;
-                height: 25px;
-                padding: 0;
-                border-radius: 50%;
-                color: var(--clr-wht-basic);
-                background: var(--clr-org-pumpkin);
-              }
-            }
-          }
-
-          .row-location-popup{
+        .row-header-popup{
+          background: var(--gradient-grn-left);
+          .content-header-popup{
             padding: 20px;
-            border-bottom: 1px solid var(--clr-wht-gainsboro);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h2{
+              color: var(--clr-wht-basic);
+              text-align: center;
+              font-size: large;
+            }
+
+            .btn-close-popup{
+              width: 25px;
+              height: 25px;
+              padding: 0;
+              border-radius: 50%;
+              color: var(--clr-wht-basic);
+              background: var(--clr-org-pumpkin);
+            }
           }
+        }
 
-          .row-body-popup{
-            overflow: auto;
-            .list-unit-pm-popup{
-              padding: 20px;
-              display: grid;
-              grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        .row-location-popup{
+          padding: 20px;
+          border-bottom: 1px solid var(--clr-wht-gainsboro);
+        }
+
+        .row-body-popup{
+          overflow: auto;
+          .list-unit-pm-popup{
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            .unit-pm-popup{
+              display: flex;
               gap: 1rem;
-              .unit-pm-popup{
-                display: flex;
-                gap: 1rem;
-                border-radius: 5px;
-                padding: 5px;
-                align-items: center;
-                background: var(--clr-wht-cultured);
-                transition: 0.3s;
-                i{
-                  display: inline;
-                  color: var(--clr-grn-generic-viridian);
-                  font-size: 25px;
-                }
-              
-                span{
-                  display: inline;
-                }
+              border-radius: 5px;
+              padding: 5px;
+              align-items: center;
+              background: var(--clr-wht-cultured);
+              transition: 0.3s;
+              i{
+                display: inline;
+                color: var(--clr-grn-generic-viridian);
+                font-size: 25px;
+              }
+            
+              span{
+                display: inline;
+              }
 
-                &:hover{
-                  background: var(--clr-grn-generic-viridian);
-                  i, span{
-                    color: var(--clr-wht-basic);
-                  }
+              &:hover{
+                background: var(--clr-grn-generic-viridian);
+                i, span{
+                  color: var(--clr-wht-basic);
                 }
               }
             }
           }
-
         }
+
       }
     }
   }
+}
 
 //Responsive Mobile
 @media (max-width: 1024px) {
+  body{
+    p,span,button,table {
+      font-size: 12px;
+    }
+  }
+
   #main-content {
     #choose-module{
       .row-btn-module{
         flex-direction: column;
+        a{
+          width: unset;
+          max-width: 200px;
+          min-width: 100px;
+        }
       }
     }
 
@@ -696,6 +767,14 @@ body {
         .row-head-pm{
           .img-pm{
             width: 85PX;
+          }
+        }
+      }
+      .row-nav-subhead{
+        .nav-head{
+          gap: 5px !important;
+          div{
+            gap: 5px !important;
           }
         }
       }
@@ -728,6 +807,27 @@ body {
             }
           }
         }
+        
+        #pm-table{
+          .row-tb-pm{
+            .content-body-tb-pm{
+              #chart-tb-pm{
+                .row-list-chart-pm{
+                  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //popup content responsive
+  #row-popup-unit-pm{
+    .popup-bg{
+      .section-content{
+        width: 95%;
       }
     }
   }

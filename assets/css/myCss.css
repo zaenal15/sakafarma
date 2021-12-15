@@ -10,6 +10,8 @@
   --clr-grn-sheen: #76BBB3;
   --clr-grn-keppel: #08AF9C;
   --clr-grn-generic-viridian: #068374;
+  --clr-grn-deep-jungle: #0c4b45;
+  --clr-grn-phthalo: #022723;
   --clr-org-pumpkin: #FC7222;
   --gradient-grn-left: linear-gradient(to left, var(--clr-grn-keppel), var(--clr-grn-generic-viridian));
   /* width */
@@ -148,6 +150,7 @@ body .src-bar input {
   display: -ms-flexbox;
   display: flex;
   gap: 1rem;
+  padding: 20px;
 }
 
 #main-content #choose-module .row-btn-module a {
@@ -415,7 +418,6 @@ body .src-bar input {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: auto;
 }
 
 #main-content #content-module-pm #content-pm #unit-pm .row-filter-item-pm {
@@ -527,7 +529,7 @@ body .src-bar input {
 }
 
 #main-content #content-module-pm #content-pm #pm-table {
-  background: #022723;
+  background: var(--clr-grn-phthalo);
   overflow: auto;
 }
 
@@ -577,8 +579,66 @@ body .src-bar input {
   color: var(--clr-wht-basic);
 }
 
-#main-content #content-module-pm #content-pm #pm-table .pm-table-content {
+#main-content #content-module-pm #content-pm #pm-table .row-tb-pm {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  margin: 20px;
+  background: var(--clr-grn-deep-jungle);
+}
+
+#main-content #content-module-pm #content-pm #pm-table .row-tb-pm .content-header-tb-pm {
+  background: var(--gradient-grn-left);
+  padding: 5px 20px;
+}
+
+#main-content #content-module-pm #content-pm #pm-table .row-tb-pm .content-header-tb-pm span {
+  color: var(--clr-wht-basic);
+  font-weight: 600;
+}
+
+#main-content #content-module-pm #content-pm #pm-table .row-tb-pm .content-body-tb-pm {
+  display: -ms-grid;
+  display: grid;
+  gap: 1rem;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
   padding: 20px;
+}
+
+#main-content #content-module-pm #content-pm #pm-table .row-tb-pm .content-body-tb-pm #pm-table-content {
+  display: -ms-grid;
+  display: grid;
+  gap: 1rem;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  overflow: hidden;
+}
+
+#main-content #content-module-pm #content-pm #pm-table .row-tb-pm .content-body-tb-pm #chart-tb-pm .card {
+  border-radius: 10px;
+}
+
+#main-content #content-module-pm #content-pm #pm-table .row-tb-pm .content-body-tb-pm #chart-tb-pm .row-list-chart-pm {
+  display: -ms-grid;
+  display: grid;
+  gap: 1rem;
+  -ms-grid-columns: (minmax(400px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+
+#main-content #content-module-pm #content-pm #pm-table .row-tb-pm .content-body-tb-pm #chart-tb-pm .row-list-chart-pm .content-chart-tb .header-chart-tb {
+  padding: 10px;
+  border-bottom: 1px solid var(--clr-wht-gainsboro);
+}
+
+#main-content #content-module-pm #content-pm #pm-table .row-tb-pm .content-body-tb-pm #chart-tb-pm .row-list-chart-pm .content-chart-tb .header-chart-tb span {
+  font-weight: 500;
+}
+
+#main-content #content-module-pm #content-pm #pm-table .row-tb-pm .content-body-tb-pm #chart-tb-pm .row-list-chart-pm .content-chart-tb .body-chart-tb {
+  padding: 10px;
 }
 
 .back {
@@ -589,6 +649,11 @@ body .src-bar input {
   background: var(--clr-wht-basic);
   border-radius: 15px;
   border: 1px solid var(--clr-wht-light-grey);
+}
+
+.line {
+  height: 5px;
+  background: var(--clr-grn-phthalo);
 }
 
 .section-content {
@@ -624,11 +689,11 @@ body .src-bar input {
 
 .table-scroll {
   position: relative;
-  max-width: 1500px;
+  max-width: 1450px;
+  width: 100%;
   margin: auto;
   overflow: hidden;
-  overflow-x: hiden;
-  border: 1px solid #000;
+  border: 1px solid var(--clr-blk-davys-grey);
 }
 
 .table-scroll table {
@@ -640,18 +705,18 @@ body .src-bar input {
 
 .table-scroll th, .table-scroll td {
   padding: 5px 10px;
-  border: 1px solid #000;
-  background: #fff;
+  border: 1px solid var(--clr-blk-davys-grey);
+  background: var(--clr-wht-basic);
   white-space: nowrap;
   vertical-align: top;
+  width: 200px !important;
 }
 
 .table-scroll thead, .table-scroll tfoot {
-  background: #f9f9f9;
+  background: var(--clr-wht-cultured);
 }
 
 .table-scroll .table-wrap {
-  /* 	width:100%; */
   overflow-x: auto;
 }
 
@@ -664,6 +729,7 @@ body .src-bar input {
 
 .clone th, .clone td {
   visibility: hidden;
+  width: 200px;
 }
 
 .clone tbody th {
@@ -672,13 +738,17 @@ body .src-bar input {
 }
 
 .clone .fixed-side {
-  border: 1px solid #000;
-  background: #eee;
+  border: 1px solid var(--clr-blk-davys-grey);
+  background: var(--clr-wht-cultured);
   visibility: visible;
 }
 
 .clone thead, .clone tfoot {
   background: transparent;
+}
+
+#row-popup-unit-pm {
+  display: none;
 }
 
 #row-popup-unit-pm .section-content {
@@ -797,14 +867,28 @@ body .src-bar input {
 }
 
 @media (max-width: 1024px) {
+  body p, body span, body button, body table {
+    font-size: 12px;
+  }
   #main-content #choose-module .row-btn-module {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  #main-content #choose-module .row-btn-module a {
+    width: unset;
+    max-width: 200px;
+    min-width: 100px;
+  }
   #main-content #content-module-pm #header-pm .row-head-pm .img-pm {
     width: 85PX;
+  }
+  #main-content #content-module-pm .row-nav-subhead .nav-head {
+    gap: 5px !important;
+  }
+  #main-content #content-module-pm .row-nav-subhead .nav-head div {
+    gap: 5px !important;
   }
   #main-content #content-module-pm #content-pm .section-content {
     width: 100%;
@@ -826,6 +910,13 @@ body .src-bar input {
   #main-content #content-module-pm #content-pm #unit-pm .row-card-content-pm .list-unit-pm {
     -ms-grid-columns: (minmax(250px, 1fr))[auto-fill];
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+  #main-content #content-module-pm #content-pm #pm-table .row-tb-pm .content-body-tb-pm #chart-tb-pm .row-list-chart-pm {
+    -ms-grid-columns: (minmax(250px, 1fr))[auto-fill];
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+  #row-popup-unit-pm .popup-bg .section-content {
+    width: 95%;
   }
 }
 /*# sourceMappingURL=myCss.css.map */

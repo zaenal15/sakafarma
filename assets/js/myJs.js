@@ -1,12 +1,7 @@
 $(document).ready(function(){
   // hide section
-  $('#content-module-pm, #location-pm, #unit-pm, #pm-table, .nav-location-pm, .nav-unit-pm, .nav-table-unit-pm, #row-popup-unit-pm').hide()
+  $('#unit-pm, #pm-table, .nav-unit-pm, .nav-table-unit-pm').hide()
   
-  // back choose module
-  $('#back-pm').click(function(){
-    $('#content-module-pm, .row-nav-subhead, #location-pm, #unit-pm').hide()
-    $('#choose-module').show()
-  })
 
   // show content section
   $('#btn-pm, .nav-location-pm').click(function(){
@@ -54,6 +49,6 @@ $(document).ready(function(){
 // requires jquery library
 jQuery(document).ready(function() {
    jQuery(".main-table").clone(true).appendTo('#table-scroll').addClass('clone');   
- });
+});
 
 
