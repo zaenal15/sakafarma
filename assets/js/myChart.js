@@ -1,7 +1,7 @@
 //amper chart
 $(document).ready(function(){
   const rand = () =>
-    Array.from({ length: 10 }, () => Math.floor(Math.random() * 100));
+    Array.from({ length: 10 }, () => Math.floor(Math.random() * 300));
   
   let data = rand();
   

@@ -398,14 +398,18 @@ body {
           grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
           gap: 1rem;
           .content-unit-pm {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-rows: auto;
+            grid-template-areas: 
+            "s1"
+            "s2"
+            "s3";
             overflow: hidden;
             transition: 0.2s;
             &:hover{
-              transform: scale(1.03);
-              background: var(--gradient-grn-left);
-              .content-asset-bottom {
+              transform: scale(1.04);
+              .content-name-pm {
+                background: var(--gradient-grn-left);
                 color: var(--clr-wht-basic);
                 i{
                   color: var(--clr-wht-basic);
@@ -414,17 +418,45 @@ body {
             }
             
             .content-asset-header {
+              grid-area: s2;
               img {
                 width: 100%;
                 display: block;
               }
             }
+
+            .content-point-check{
+              grid-area: s3;
+              min-height: 30px;
+              padding: 10px;
+              display: flex;
+              align-items: center;
+              justify-content: space-evenly;
+              div{
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;;
+                p{
+                  font-size: small;
+                  color: var(--clr-org-pumpkin);
+                  font-weight: 800;
+                }
+              }
+            }
     
-            .content-asset-bottom {
-              margin: 10px;
+            .content-name-pm {
+              grid-area: s1;
+              min-height: 30px;
+              padding: 10px;
               display: flex;
               align-items: center;
               gap: 1rem;
+
+              span{
+                font-weight: 500;
+              }
               
               i{
                 font-size: 30px;
